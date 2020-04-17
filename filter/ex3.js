@@ -33,6 +33,15 @@ Expected OUTPUT for these sample arguments:
 */
 
 function filterOnPrice(products, maxPrice) {
+  let arr = [];
+  products.filter((produt) => {
+    // console.log(produt.price < maxPrice);
+    if (produt.price <= maxPrice) {
+      arr.push(produt);
+    }
+  });
+  // console.log(arr);
+  return arr;
 }
 
 // DON'T TOUCH THIS!
