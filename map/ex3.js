@@ -62,9 +62,27 @@ Expected OUTPUT for this sample:
  */
 
 function getMoviesFreshness(movies) {
+  let arr = [];
+  movies.map((obj) => {
+    let auxObj = {};
+    auxObj.name = obj.name;
+    auxObj.rating = obj.rating;
+    if (obj.rating < 60) {
+      // rotten
+      auxObj.label = "rotten";
+    } else if (obj.rating >= 60 && obj.rating <= 75) {
+      // fresh
+      auxObj.label = "fresh";
+    } else {
+      // certified fresh
+      auxObj.label = "certified fresh";
+    }
+
+    arr.push(auxObj);
+  });
+  console.log(arr);
+  return arr;
 }
-
-
 
 // DON'T TOUCH THIS!
 module.exports = getMoviesFreshness;
